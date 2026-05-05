@@ -16,6 +16,12 @@ jobs:
     name: Test Python package
     runs-on: ubuntu-latest
     steps:
+      - name: Check put repo # To let runners(VM) no which repo to look.
+        uses: actions/checkout@v6 # Git action called checkout ver-6
+      - name: Install Python
+        uses: actions/setup-python@v6 # Actions have a dedicated Git repo
+        with:
+          python-version: "3.14"
       - name: Install package
       #from python.toml
         run: pip install .[test] # period for the current dir and installs both dependencies and optional dependencies
