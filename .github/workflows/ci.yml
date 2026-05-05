@@ -1,9 +1,13 @@
+name: My CI
+
 on:
   push:
 
 
 jobs:
   hello:
+    name: My Hello Jobs
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World fork"
+      - name: Print Hello
+        run: echo "Hello World fork"
