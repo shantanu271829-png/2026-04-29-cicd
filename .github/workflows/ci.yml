@@ -11,3 +11,13 @@ jobs:
     steps:
       - name: Print Hello
         run: echo "Hello World fork"
+
+  test:
+    name: Test Python package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install package
+      #from python.toml
+        run: pip install .[test] # period for the current dir and installs both dependencies and optional dependencies
+      - name: Run pytest
+        run: pytest -vv         # -vv very verbose
