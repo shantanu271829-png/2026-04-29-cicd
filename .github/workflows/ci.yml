@@ -1,7 +1,10 @@
 name: My CI
 
 on:
-  push:
+  push: #activates (on) when changes pushed to repo.
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 
 
 jobs:
@@ -16,7 +19,7 @@ jobs:
     name: Test Python package
     runs-on: ubuntu-latest
     steps:
-      - name: Check put repo # To let runners(VM) no which repo to look.
+      - name: Check put repo # To let runners(VM) know which repo to look.
         uses: actions/checkout@v6 # Git action called checkout ver-6
       - name: Install Python
         uses: actions/setup-python@v6 # Actions have a dedicated Git repo
