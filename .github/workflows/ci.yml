@@ -18,7 +18,7 @@ jobs:
   test:
     name: Test Python package
     runs-on: ${{matrix.os}}
-    needs: [hello]
+    needs: [hello] # generates chain connected jobs
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
